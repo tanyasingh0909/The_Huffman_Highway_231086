@@ -1,43 +1,17 @@
-#include <iostream>
-
-void printPattern(int n) {
-    for (int i = 1; i <= n; ++i) {
-        // Part 1: Ascending sequence from 1 to i
-        for (int j = 1; j <= i; ++j) {
-            std::cout << j;
-        }
-        
-        std::cout << " ";
-
-         // Part 2: Descending from i to 1 followed by ascending from 1 to i
-        for (int j = i; j >= 1; --j) {
-            std::cout << j;
-        }
-        for (int j = 1; j <= i; ++j) {
-            std::cout << j;
-        }
-        
-       std::cout << " ";
-
-        // Part 3: Part 2 repeated
-        for (int j = i; j >= 1; --j) {
-            std::cout << j;
-        }
-        for (int j = 1; j <= i; ++j) {
-            std::cout << j;
-        }
-
-       // Move to the next line
-        std::cout << std::endl;
-    }
-}
+#include <stdio.h>
 
 int main() {
     int n;
-    std::cout << "Enter the value of n: ";
-    std::cin >> n;
-
-    printPattern(n);
-
+    scanf("%d",&n);
+    for(int i=1; i<=5; i++){
+        for(int j=1; j<=i; j++) printf("%d",j);
+        for(int k=1; k<=2*(n-i); k++) printf(" ");
+        for(int l=i; l>=1; l--) printf("%d",l);
+        for(int m=1; m<=i; m++) printf("%d",m);
+        for(int k=1; k<=2*(n-i); k++) printf(" ");
+        for(int l=i; l>=1; l--) printf("%d",l);
+        for(int m=1; m<=i; m++) printf("%d",m);
+        printf("\n");
+    }
     return 0;
 }
